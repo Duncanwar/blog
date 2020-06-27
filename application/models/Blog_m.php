@@ -11,4 +11,22 @@ class Blog_m extends CI_Model{
             return false;
         
     }
+    public function submit(){
+        $field = array(
+            'title'=>$this->input->post('txt_title'),
+            'description'=>$this->input->post('txt_description'),
+            'created_at'=>date('Y-m-d H:i:s')
+        );
+        $this->db->insert('tbl_blogs', $field);
+        if($this->db->affected_rows()>0){
+            return true;
+        }
+        else
+        return false;
+    }
+
+    public function getBlogById($id){
+        $this->db->where('id',$id);
+        $query
+    }
 }

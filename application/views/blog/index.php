@@ -1,25 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
-    
-    <title>Blog</title>
-</head>
-<body>
-<div class="navbar navbar-default">
-<div class="container">
-<h2>
-<span class="glyphicon glyphicon-home"></span>&nbsp; Welcome to my blog
-</h2>
-</div>
-</div>
+
 
 <div class="container">
 <h3>Blog list</h3>
-<a href="<?php base_url('blog/add'); ?>" class="btn btn-primary">Add New</a>
+<?php 
+if($this->session->flashdata('success_msg')){
+    ?>
+
+<div class="alert alert-success">
+<?php echo $this->session->flashdata('success_msg'); ?>
+</div>
+<?php 
+} ?>
+
+<?php 
+if($this->session->flashdata('error_msg')){
+    ?>
+
+<div class="alert alert-success">
+<?php echo $this->session->flashdata('error_msg'); ?>
+</div>
+<?php 
+} ?>
+
+
+<a href="<?php echo base_url('blog/add'); ?>" class="btn btn-primary">Add New</a>
 <table class="table table-bordered table-responsive">
 <thead>
 <tr>
@@ -49,6 +53,3 @@ if($blogs){
 </tbody>
 
 </table>
-</div>
-</body>
-</html>
