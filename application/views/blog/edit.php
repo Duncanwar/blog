@@ -1,6 +1,6 @@
 
 	<h3>Edit Blog</h3>
-	<a href="<?php echo base_url('blog/index'); ?>" class="btn btn-default">Back</a>
+	<a href="<?php echo base_url('blog/index'); ?>" class="btn btn-dark">Back</a>
 	<form action="<?php echo base_url('blog/update') ?>" method="post" class="form-horizontal">
 		<input type="hidden" name="txt_hidden" value="<?php echo $blog->id; ?>">
 		<div class="form-group">

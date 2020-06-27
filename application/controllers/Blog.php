@@ -47,6 +47,17 @@
             }
         redirect(base_url('blog/index')); 
         }
-       
+
+        public function delete($id){
+            $result = $this->m->delete($id);
+        
+        if($result){
+            $this->session->set_flashdata('success_msg', 'Record delete succesfully');
+        }
+        else{
+        $this->session->set_flashdata('error_msg', 'Fail to Delete record');
+        }
+    redirect(base_url('blog/index')); 
     }
+}
     

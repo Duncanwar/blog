@@ -1,5 +1,5 @@
 <h3>Add Blog</h3>
-<a href="<?php echo base_url('blog/index'); ?>" class="btn btn-default">Back</a>
+<a href="<?php echo base_url('blog/index'); ?>" class="btn btn-secondary">Back</a>
 <form action="<?php echo base_url('blog/submit') ?>" method="post" class="form-horizontal">
 <div class="form-group">
 <label for="title" class="col-md-2 text-right">Title</label>

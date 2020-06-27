@@ -46,7 +46,7 @@ if($blogs){
 <td><?php echo $blog->created_at; ?></td>
 <td>
 <a href="<?php echo base_url('blog/edit/'.$blog->id); ?>" class="btn btn-info">Edit
-<a href="" class="btn btn-danger">Delete</a>
+<a href="<?php echo base_url('blog/delete/'.$blog->id); ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this row ?');">Delete</a>
 </td>
 </tr>
     <?php }}?>
