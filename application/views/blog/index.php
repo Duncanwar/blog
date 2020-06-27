@@ -45,7 +45,7 @@ if($blogs){
 <td><?php echo $blog->description; ?></td>
 <td><?php echo $blog->created_at; ?></td>
 <td>
-<a href="" class="btn btn-info">Edit
+<a href="<?php echo base_url('blog/edit/'.$blog->id); ?>" class="btn btn-info">Edit
 <a href="" class="btn btn-danger">Delete</a>
 </td>
 </tr>

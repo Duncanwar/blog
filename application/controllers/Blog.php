@@ -31,7 +31,21 @@
         }
 
         public function edit($id){
-            
+            $data['blog'] = $this->m->getBlogById($id);
+            $this->load->view('layout/header');
+            $this->load->view('blog/edit',$data);
+            $this->load->view('layout/footer');
+        }
+        
+        public function update(){
+            $result = $this->m->update();
+            if($result){
+                $this->session->set_flashdata('success_msg', 'Record update succesfully');
+            }
+            else{
+            $this->session->set_flashdata('error_msg', 'Fail to Update record');
+            }
+        redirect(base_url('blog/index')); 
         }
        
     }

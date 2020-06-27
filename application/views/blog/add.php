@@ -8,7 +8,7 @@
 </div>
 </div>
 <div class="form-group">
-<label for="title" class="col-md-2 text-right">Description</label>
+<label for="title" class="col-md-2 text-right">Description </label>
 <div class="col-md-10">
 <textarea type="text" name="txt_description" class="form-control"></textarea>
 </div>

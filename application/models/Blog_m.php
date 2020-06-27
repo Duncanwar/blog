@@ -21,12 +21,36 @@ class Blog_m extends CI_Model{
         if($this->db->affected_rows()>0){
             return true;
         }
-        else
-        return false;
+        else{
+        return false;}
     }
 
     public function getBlogById($id){
-        $this->db->where('id',$id);
-        $query
+        $this->db->where('id', $id);
+        $query = $this->db->get('tbl_blogs');
+        if($query->num_rows()>0){
+            return $query->row();
+        }
+        else{
+            return false;
+        }
+    }
+
+    public function update(){
+        $id = $this->input->post('txt_hidden');
+        $field= array(
+            'title'=>$this->input->post('txt_title'),
+            'description'=>$this->input->post('txt_description'),
+            'updated_at'=>date('Y-m-d H:i:s')
+        );
+        $this->db->where('id', $id);
+        
+        $this->db->update('tbl_blogs', $field);
+        if($this->db->affected_rows() > 0){
+            return true;
+        }
+        else{
+        return false;
+    }
     }
 }
